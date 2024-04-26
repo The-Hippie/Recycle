@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.clase.R;
 import com.example.clase.recycler.Usuario;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -54,7 +55,8 @@ public class Adaptador_usuario extends RecyclerView.Adapter<Adaptador_usuario.Vi
       public void bind(Usuario dato){
           txt_nombre_usuario.setText(dato.getNombre());
           txt_curso.setText(dato.getCusro());
-          //image
+          //imagen
+          Picasso.get().load(dato.getImagen()).into(imag_usuario);
       }
   }
 
