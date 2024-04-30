@@ -33,8 +33,8 @@ public class Adaptador_usuario extends RecyclerView.Adapter<Adaptador_usuario.Vi
 
     @Override
     public void onBindViewHolder(@NonNull Adaptador_usuario.ViewHolder holder, int position) {
-       Usuario dato=datos.get(position);
-       holder.bind(dato);
+        Usuario dato=datos.get(position);
+        holder.bind(dato);
 
     }
 
@@ -42,22 +42,22 @@ public class Adaptador_usuario extends RecyclerView.Adapter<Adaptador_usuario.Vi
     public int getItemCount() {
         return datos.size();
     }
-  public static class ViewHolder extends RecyclerView.ViewHolder{
-      TextView txt_nombre_usuario, txt_curso;
-      ImageView imag_usuario;
+    public static class ViewHolder extends RecyclerView.ViewHolder{
+        TextView txt_nombre_usuario, txt_curso;
+        ImageView imag_usuario;
 
-      public ViewHolder(@NonNull View itemView) {
-          super(itemView);
-          txt_nombre_usuario=itemView.findViewById(R.id.txt_nombre_usuario);
-          txt_curso=itemView.findViewById(R.id.txt_curso);
-          imag_usuario=itemView.findViewById(R.id.img_usuario);
-      }
-      public void bind(Usuario dato){
-          txt_nombre_usuario.setText(dato.getNombre());
-          txt_curso.setText(dato.getCusro());
-          //imagen
-          Picasso.get().load(dato.getImagen()).into(imag_usuario);
-      }
-  }
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            txt_nombre_usuario=itemView.findViewById(R.id.txt_nombre_usuario);
+            txt_curso=itemView.findViewById(R.id.txt_curso);
+            imag_usuario=itemView.findViewById(R.id.img_usuario);
+        }
+        public void bind(Usuario dato){
+            txt_nombre_usuario.setText(dato.getNombre());
+            txt_curso.setText(dato.getCusro());
+            //imagen
+            Picasso.get().load(dato.getImagen()).into(imag_usuario);
+        }
+    }
 
 }
